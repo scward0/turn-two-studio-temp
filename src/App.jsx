@@ -311,10 +311,10 @@ const TurnTwoLanding = () => {
 
           {/* Main Headline */}
           <div ref={headlineRef} className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-black leading-tight mb-2">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl text-black leading-tight mb-2" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
               Brave brands move forward.
             </h1>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold gradient-text leading-tight">
+            <h2 className="text-4xl md:text-6xl lg:text-7xl text-black leading-tight" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
               We help them build momentum.
             </h2>
           </div>
@@ -342,7 +342,7 @@ const TurnTwoLanding = () => {
       </div>
       
       {/* Location & Time - Fixed to bottom */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-gray-500 font-bold z-20">
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 text-sm text-black font-bold z-20">
         <span>Salt Lake City</span>
         <span className="mx-3">{currentTime}</span>
       </div>
