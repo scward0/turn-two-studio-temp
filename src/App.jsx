@@ -198,8 +198,10 @@ const TurnTwoLanding = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
         
-        * {
-          cursor: none !important;
+        @media (hover: hover) and (pointer: fine) {
+          * {
+            cursor: none !important;
+          }
         }
         
         body {
@@ -209,28 +211,37 @@ const TurnTwoLanding = () => {
           overflow-x: hidden;
         }
         
-        .custom-cursor {
-          position: fixed;
-          width: 40px;
-          height: 40px;
-          border: 2px solid #299AFD;
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 9999;
-          mix-blend-mode: difference;
-          transition: transform 0.3s ease;
-          transform: translate(-20px, -20px);
+        @media (hover: hover) and (pointer: fine) {
+          .custom-cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #299AFD;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.3s ease;
+            transform: translate(-20px, -20px);
+          }
+          
+          .cursor-dot {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: #299AFD;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-2px, -2px);
+          }
         }
         
-        .cursor-dot {
-          position: fixed;
-          width: 4px;
-          height: 4px;
-          background: #299AFD;
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 10000;
-          transform: translate(-2px, -2px);
+        @media not all and (hover: hover) and (pointer: fine) {
+          .custom-cursor,
+          .cursor-dot {
+            display: none !important;
+          }
         }
         
         .particle {
@@ -311,10 +322,10 @@ const TurnTwoLanding = () => {
 
           {/* Main Headline */}
           <div ref={headlineRef} className="mb-8">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl text-black leading-tight mb-2" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl text-black leading-none mb-2" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
               Brave brands move forward.
             </h1>
-            <h2 className="text-4xl md:text-6xl lg:text-7xl text-black leading-tight" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
+            <h2 className="text-5xl md:text-7xl lg:text-8xl text-black leading-none" style={{ fontFamily: '"ff-more-web-pro-condensed", serif', fontWeight: 300, fontStyle: 'normal' }}>
               We help them build momentum.
             </h2>
           </div>
@@ -322,8 +333,7 @@ const TurnTwoLanding = () => {
           {/* Subtitle */}
           <p 
             ref={subtitleRef} 
-            className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-12"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            className="text-lg md:text-xl text-blackmax-w-4xl mx-auto leading-relaxed mb-12"
           >
             Turn Two is a <span className="font-semibold text-black">creative growth studio</span> uniting branding, marketing, and production.
           </p>
